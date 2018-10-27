@@ -1,0 +1,21 @@
+{
+"localaddr": ":9898",
+"remoteaddr": "代理服务器ip:8888",
+"key": "atrandys",
+"crypt": "salsa20",
+"mode": "fast2",
+"mtu": 512,
+"sndwnd": 128,
+"rcvwnd": 1024,
+"datashard": 5,
+"parityshard": 5,
+"dscp": 46,
+"nocomp": true,
+"acknodelay": false,
+"nodelay": 1,
+"interval": 10,
+"resend": 1,
+"nc": 1,
+"sockbuf": 4194304,
+"keepalive": 10
+}
