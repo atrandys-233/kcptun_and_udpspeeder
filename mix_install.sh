@@ -38,5 +38,7 @@ nohup ./speederv2_amd64 -s -l0.0.0.0:9999 -r127.0.0.1:$port -k "atrandys" -f2:4 
 nohup ./server_linux_amd64 -c ./kcptun_server.json >kcptun.log 2>&1 &
 EOF
 
+chmod +x /etc/rc.d/init.d/kcpandudp
+
 echo "安装完成"
 
