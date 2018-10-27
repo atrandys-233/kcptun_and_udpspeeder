@@ -1,6 +1,6 @@
 {
 "localaddr": ":9898",
-"remoteaddr": "代理服务器ip:8888",
+"remoteaddr": "your_server_ip:8888",
 "key": "atrandys",
 "crypt": "salsa20",
 "mode": "fast2",
