@@ -4,6 +4,9 @@
 这里的方案配置的参数只适合游戏等小流量、低延迟需求的场景，不适合其他大流量使用场景，例如在线视频等。
 ### 服务端
 服务端这里配置一个一键脚本，mix_server.sh，安装完成后服务开启自启动。
+
+kcptun服务端监听：8888端口
+udpspeeder服务端监听：9999端口
 ### 客户端
 客户端也制作了bat脚本，start.bat、stop.bat，分别在开启时使用和关闭时使用。
 udpspeeder和kcptun客户端监听同一个端口9898，此时tcp会进入kcptun隧道，udp会进入udpspeeder隧道。
