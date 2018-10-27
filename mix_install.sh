@@ -5,10 +5,13 @@ yum -y install wget
 
 #下载几个配置文件
 mkdir /usr/src/game
+mkdir /usr/src/game/client
+cd /usr/src/game/client
+wget https://raw.githubusercontent.com/yobabyshark/kcptun_and_udpspeeder/master/start.bat
+wget https://raw.githubusercontent.com/yobabyshark/kcptun_and_udpspeeder/master/stop.bat
 cd /usr/src/game
 wget https://raw.githubusercontent.com/yobabyshark/kcptun_and_udpspeeder/master/kcptun_client.json
 wget https://raw.githubusercontent.com/yobabyshark/kcptun_and_udpspeeder/master/kcptun_server.json
-wget https://raw.githubusercontent.com/yobabyshark/kcptun_and_udpspeeder/master/start.bat
 wget https://github.com/yobabyshark/kcptun_and_udpspeeder/raw/master/speederv2_amd64
 wget https://github.com/yobabyshark/kcptun_and_udpspeeder/raw/master/server_linux_amd64
 
@@ -17,7 +20,7 @@ serverip=$(curl icanhazip.com)
 echo "输入本地代理软件监听的端口"
 read -p "请输入数字:" port
 sed -i "s/your_server_ip/$serverip/" /usr/src/game/kcptun_client.json
-sed -i "s/your_server_ip/$serverip/" /usr/src/game/start.bat
+sed -i "s/your_server_ip/$serverip/" /usr/src/game/client/start.bat
 sed -i "s/your_server_port/$port/" /usr/src/game/kcptun_server.json
 
 #启动服务
