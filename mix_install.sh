@@ -3,7 +3,7 @@
 #开始
 echo "给即将安装的软件设置一个文件夹名称"
 read -p "请输入英文字母:" yourdir
-ifdir = "/usr/src/"$yourdir
+ifdir="/usr/src/"$yourdir
 if [ ! -d "$ifdir" ]; then
 #下载几个配置文件
 mkdir /usr/src/$yourdir
@@ -31,7 +31,7 @@ nohup ./speederv2_amd64 -s -l0.0.0.0:9999 -r127.0.0.1:$port -k "atrandys" -f2:4 
 nohup ./server_linux_amd64 -c ./kcptun_server.json >kcptun.log 2>&1 &
 
 #写入开机自启
-myfile = "/etc/rc.d/init.d/kcpandudp"
+myfile="/etc/rc.d/init.d/kcpandudp"
 if [ ! -f "$myfile" ]; then
 cat > /etc/rc.d/init.d/kcpandudp<<-EOF
 #!/bin/sh
