@@ -13,7 +13,7 @@
 "nocomp": true,
 "acknodelay": false,
 "nodelay": 0,
-"interval": 40,
+"interval": 10,
 "resend": 0,
 "nc": 0,
 "sockbuf": 4194304,
