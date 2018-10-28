@@ -5,8 +5,8 @@
 ### 服务端
 服务端这里配置一个一键脚本，mix_install.sh，安装完成后服务开启自启动。
 
-kcptun服务端监听：8888端口
-udpspeeder服务端监听：9999端口
+kcptun服务端监听：手动指定
+udpspeeder服务端监听：手动指定
 #### 第一步
 yum install -y wget && wget https://raw.githubusercontent.com/yobabyshark/kcptun_and_udpspeeder/master/mix_install.sh && chmod +x mix_install.sh && ./mix_install.sh
 
