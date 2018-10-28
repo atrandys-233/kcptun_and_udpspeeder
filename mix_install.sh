@@ -29,7 +29,7 @@ read -p "请输入数字:" port
 sed -i "s/your_server_ip/$serverip/" /usr/src/$yourdir/client/kcptun_client.json
 sed -i "s/kcptun_server_port/$kcptunport/" /usr/src/$yourdir/client/kcptun_client.json
 sed -i "s/your_server_ip/$serverip/" /usr/src/$yourdir/client/start.bat
-sed -i "s/udpspeeder_server_port/$udpspeederprot/" /usr/src/$yourdir/client/start.bat
+sed -i "s/udpspeeder_server_port/$udpspeederport/" /usr/src/$yourdir/client/start.bat
 sed -i "s/your_server_port/$port/" /usr/src/$yourdir/kcptun_server.json
 sed -i "s/kcptun_server_port/$kcptunport/" /usr/src/$yourdir/kcptun_server.json
 
