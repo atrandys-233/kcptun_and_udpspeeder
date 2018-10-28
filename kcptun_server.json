@@ -1,5 +1,5 @@
 {
-"listen": ":8888",
+"listen": ":kcptun_server_port",
 "target": "127.0.0.1:your_server_port",
 "key": "atrandys",
 "crypt": "salsa20",
