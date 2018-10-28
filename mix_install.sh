@@ -2,6 +2,8 @@
 
 #开始
 echo "给即将安装的软件设置一个文件夹名称"
+echo "如果多开，文件夹名称不能相同，举例可设置为game1、game2"
+echo "新建文件夹的目录在/usr/src/下"
 read -p "请输入英文字母:" yourdir
 ifdir="/usr/src/"$yourdir
 if [ ! -d "$ifdir" ]; then
