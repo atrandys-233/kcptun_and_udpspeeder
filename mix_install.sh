@@ -39,6 +39,8 @@ nohup ./server_linux_amd64 -c ./kcptun_server.json >kcptun.log 2>&1 &
 EOF
 
 chmod +x /etc/rc.d/init.d/kcpandudp
+chkconfig --add kcpandudp
+chkconfig kcpandudp on
 
 echo "安装完成"
 
