@@ -6,6 +6,10 @@ read -p "请输入英文字母:" yourdir
 ifdir="/usr/src/"$yourdir
 if [ ! -d "$ifdir" ]; then
 #下载几个配置文件
+echo "输入kcptun监听的端口，不要使用已占用端口"
+read -p "请输入数字:" kcptunport
+echo "输入udpspeeder监听的端口，不要使用已占用端口"
+read -p "请输入数字:" udpspeederport
 mkdir /usr/src/$yourdir
 mkdir /usr/src/$yourdir/client
 cd /usr/src/$yourdir/client
@@ -23,11 +27,14 @@ serverip=$(curl icanhazip.com)
 echo "输入本地代理软件监听的端口"
 read -p "请输入数字:" port
 sed -i "s/your_server_ip/$serverip/" /usr/src/$yourdir/client/kcptun_client.json
+sed -i "s/kcptun_server_port/$kcptunport/" /usr/src/$yourdir/client/kcptun_client.json
 sed -i "s/your_server_ip/$serverip/" /usr/src/$yourdir/client/start.bat
+sed -i "s/udpspeeder_server_port/$udpspeederprot/" /usr/src/$yourdir/client/start.bat
 sed -i "s/your_server_port/$port/" /usr/src/$yourdir/kcptun_server.json
+sed -i "s/kcptun_server_port/$kcptunport/" /usr/src/$yourdir/kcptun_server.json
 
 #启动服务
-nohup ./speederv2_amd64 -s -l0.0.0.0:9999 -r127.0.0.1:$port -k "atrandys" -f2:4 --mode 0 -q1 >speeder.log 2>&1 &
+nohup ./speederv2_amd64 -s -l0.0.0.0:$udpspeederport -r127.0.0.1:$port -k "atrandys" -f2:4 --mode 0 -q1 >speeder.log 2>&1 &
 nohup ./server_linux_amd64 -c ./kcptun_server.json >kcptun.log 2>&1 &
 
 #写入开机自启
@@ -38,7 +45,7 @@ cat > /etc/rc.d/init.d/kcpandudp<<-EOF
 #chkconfig: 2345 80 90
 #description:kcpandudp
 cd /usr/src/$yourdir
-nohup ./speederv2_amd64 -s -l0.0.0.0:9999 -r127.0.0.1:$port -k "atrandys" -f2:4 --mode 0 -q1 >speeder.log 2>&1 &
+nohup ./speederv2_amd64 -s -l0.0.0.0:$udpspeederport -r127.0.0.1:$port -k "atrandys" -f2:4 --mode 0 -q1 >speeder.log 2>&1 &
 nohup ./server_linux_amd64 -c ./kcptun_server.json >kcptun.log 2>&1 &
 EOF
 
@@ -48,7 +55,7 @@ chkconfig kcpandudp on
 else 
 cat >> /etc/rc.d/init.d/kcpandudp<<-EOF
 cd /usr/src/$yourdir
-nohup ./speederv2_amd64 -s -l0.0.0.0:9999 -r127.0.0.1:$port -k "atrandys" -f2:4 --mode 0 -q1 >speeder.log 2>&1 &
+nohup ./speederv2_amd64 -s -l0.0.0.0:$udpspeederport -r127.0.0.1:$port -k "atrandys" -f2:4 --mode 0 -q1 >speeder.log 2>&1 &
 nohup ./server_linux_amd64 -c ./kcptun_server.json >kcptun.log 2>&1 &
 EOF
 
