@@ -1,6 +1,6 @@
 {
-"localaddr": ":your_kcptun_port",
-"remoteaddr": "your_server_ip:8888",
+"localaddr": ":9898",
+"remoteaddr": "your_server_ip:kcptun_server_port",
 "key": "atrandys",
 "crypt": "salsa20",
 "mode": "fast2",
