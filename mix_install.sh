@@ -3,7 +3,7 @@
 #开始
 echo "给即将安装的软件设置一个文件夹名称"
 read -p "请输入英文字母:" yourdir
-ifdir = "/usr/src/"${yourdir}
+ifdir = "/usr/src/"${yourdir}"/"
 if [! -d $ifdir]; then
 #下载几个配置文件
 mkdir /usr/src/$yourdir
