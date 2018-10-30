@@ -1,6 +1,20 @@
 #!/bin/bash
 
+#    "========================="
+#    " 介绍：适用于CentOS7"
+#    " 作者：atrandys"
+#    " 网站：www.atrandys.com"
+#    " Youtube：atrandys"
+#    "========================="
+
 #开始
+echo "========================="
+echo " 介绍：适用于CentOS7"
+echo " 作者：atrandys"
+echo " 网站：www.atrandys.com"
+echo " Youtube：atrandys"
+echo "========================="
+echo
 echo "给即将安装的软件设置一个文件夹名称"
 echo "如果多开，文件夹名称不能相同，举例可设置为game1、game2"
 echo "新建文件夹的目录在/usr/src/下"
